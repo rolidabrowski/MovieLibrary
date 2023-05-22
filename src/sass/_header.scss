@@ -7,6 +7,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  &--library {
+    background-image: url('../images/backgroundLibraryMobile.jpg');
+  }
+
   &__container {
     display: flex;
     align-items: center;
@@ -73,13 +77,17 @@
     &__input {
       width: 100%;
       height: 20px;
-      color: $defaultColor;
       background-color: $transparentColor;
       border: none;
       border-bottom: 1px solid $defaultColor;
       outline: none;
-      font-size: $smallFontSize;
-      line-height: $defaultLineHeight;
+
+      &::placeholder {
+        color: $defaultColor;
+        font-size: $smallFontSize;
+        line-height: $defaultLineHeight;
+        padding: 2px 2px;
+      }
     }
 
     &__btn {
@@ -108,12 +116,20 @@
   (min-resolution: 2dppx) {
   .header {
     background-image: url('../images/backgroundMobile@2x.jpg');
+
+    &--library {
+      background-image: url('../images/backgroundLibraryMobile@2x.jpg');
+    }
   }
 }
 
 @media (min-width: 768px) {
   .header {
     background-image: url('../images/backgroundTablet.jpg');
+
+    &--library {
+      background-image: url('../images/backgroundLibraryTablet.jpg');
+    }
   }
 
   .form {
@@ -126,12 +142,20 @@
   (min-width: 768px) and (min-resolution: 2dppx) {
   .header {
     background-image: url('../images/backgroundTablet@2x.jpg');
+
+    &--library {
+      background-image: url('../images/backgroundLibraryTablet@2x.jpg');
+    }
   }
 }
 
 @media (min-width: 1280px) {
   .header {
     background-image: url('../images/backgroundDesktop.jpg');
+
+    &--library {
+      background-image: url('../images/backgroundLibraryDesktop.jpg');
+    }
   }
   .form {
     min-width: 394px;
@@ -143,5 +167,9 @@
   (min-width: 1280px) and (min-resolution: 2dppx) {
   .header {
     background-image: url('../images/backgroundDesktop@2x.jpg');
+
+    &--library {
+      background-image: url('../images/backgroundLibraryDeskop@2x.jpg');
+    }
   }
 }

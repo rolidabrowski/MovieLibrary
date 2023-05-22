@@ -1,1 +1,1 @@
-import ApiServise from './js/api.js';
+import ApiService from './js/api.js';
