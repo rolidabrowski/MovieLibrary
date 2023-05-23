@@ -1,7 +1,7 @@
 .header {
   @extend .container;
   padding-top: 40px;
-  padding-bottom: 92px;
+  padding-bottom: 44px;
   background-image: url('../images/backgroundMobile.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -17,6 +17,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 54px;
+
+    &--margin {
+      margin-bottom: 62px;
+    }
   }
 
   &__logo {
@@ -62,7 +66,6 @@
       top: 14px;
       width: 100%;
       height: 3px;
-
       background: $accentColor;
       border-radius: 1px;
     }
@@ -73,14 +76,24 @@
     display: block;
     margin: 0 auto;
     position: relative;
+    @include tablet {
+      min-width: 336px;
+    }
+    @include desktop {
+      min-width: 394px;
+    }
 
     &__input {
       width: 100%;
       height: 20px;
+      margin-bottom: 16px;
       background-color: $transparentColor;
       border: none;
       border-bottom: 1px solid $defaultColor;
       outline: none;
+      color: $defaultColor;
+      font-size: $smallFontSize;
+      line-height: $defaultLineHeight;
 
       &::placeholder {
         color: $defaultColor;
@@ -96,11 +109,52 @@
       position: absolute;
       top: 4px;
       right: 0px;
+      cursor: pointer;
     }
 
     &__icon {
       fill: $defaultColor;
       align-items: center;
+    }
+
+    &__result {
+      // visibility: visible;
+      visibility: hidden;
+      color: $accentColor;
+      font-size: $smallFontSize;
+      line-height: $defaultLineHeight;
+      text-align: left;
+    }
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &__status {
+      width: 130px;
+      height: 40px;
+      background-color: $transparentColor;
+      border: 1px solid $defaultColor;
+      border-radius: 4px;
+      color: $defaultColor;
+      font-weight: 500;
+      font-size: $smallFontSize;
+      line-height: $smallLineHeight;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      @include tablet {
+        width: 152px;
+        height: 44px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $descritiopnColor;
+      }
     }
   }
 }
@@ -131,10 +185,6 @@
       background-image: url('../images/backgroundLibraryTablet.jpg');
     }
   }
-
-  .form {
-    min-width: 336px;
-  }
 }
 
 @media (min-width: 768px) and (min-device-pixel-ratio: 2),
@@ -156,9 +206,6 @@
     &--library {
       background-image: url('../images/backgroundLibraryDesktop.jpg');
     }
-  }
-  .form {
-    min-width: 394px;
   }
 }
 
