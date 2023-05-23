@@ -1,0 +1,49 @@
+.footer {
+  background-color: $backgroundColor;
+  @extend .container;
+  padding: 30px 0px;
+
+  &__list {
+    color: $textColor;
+    text-align: center;
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    font-size: $smallFontSize;
+    line-height: $defaultLineHeight;
+    @include tablet {
+      font-size: $defaultFontSize;
+      line-height: $mediumLineHeight;
+    }
+
+    &--margin {
+      margin-bottom: 10px;
+      @include tablet {
+        margin-bottom: 0px;
+      }
+    }
+
+    &--padding {
+      @include tablet {
+        padding-left: 4px;
+      }
+    }
+  }
+
+  &__icon {
+    vertical-align: middle;
+    margin: 0 10px;
+    fill: $descritiopnColor;
+  }
+
+  &__link {
+    color: $textColor;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
