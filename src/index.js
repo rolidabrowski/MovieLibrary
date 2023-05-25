@@ -8,4 +8,8 @@ const refs = {
   gallery: document.querySelector('.gallery'),
 };
 
-export const ApiService = new ApiService();
+export const api = new ApiService();
+
+api.fetchDefault().then(data => {
+  console.log(data);
+});
