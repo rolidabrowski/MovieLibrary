@@ -1,6 +1,6 @@
 import { refs } from '../index.js';
 import { api } from '../index.js';
-import { renderGallery } from './rendergallery.js';
+import { renderCard } from './rendercard.js';
 
 let value = null;
 
@@ -21,7 +21,7 @@ export function onSubmit(event) {
     if (data.data.results.length === 0) {
       return;
     } else {
-      renderGallery(data);
+      renderCard(data);
     }
   });
   value = event.target.elements[0].value.trim();
@@ -34,8 +34,8 @@ export function onSubmit(event) {
   api.query = event.target.elements[0].value.trim();
 
   api.fetch().then(data => {
-    refs.gallery.innerHTML = '';
-    renderGallery(data);
+    refs.cards.innerHTML = '';
+    renderCard(data);
   });
 }
 

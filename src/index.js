@@ -1,5 +1,5 @@
 import ApiService from './js/api.js';
-import { renderGallery } from './js/rendergallery.js';
+import { renderCard } from './js/rendercard.js';
 import { onSubmit } from './js/submit.js';
 
 export const refs = {
@@ -7,16 +7,16 @@ export const refs = {
   inputEL: document.querySelector('.form__input'),
   addwatchedBtn: document.querySelector('.movieswatched'),
   addqueueBtn: document.querySelector('.moviesqueue'),
-  gallery: document.querySelector('.gallery'),
+  cards: document.querySelector('.cards'),
 };
 
 export const api = new ApiService();
 
 refs.searchForm.addEventListener('submit', onSubmit);
-refs.gallery.addEventListener('click', onCardClick);
+refs.cards.addEventListener('click', onCardClick);
 
 api.fetchDefault().then(data => {
-  renderGallery(data);
+  renderCard(data);
 });
 
 function onCardClick(event) {
