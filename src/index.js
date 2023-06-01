@@ -8,12 +8,15 @@ export const refs = {
   addwatchedBtn: document.querySelector('.movieswatched'),
   addqueueBtn: document.querySelector('.moviesqueue'),
   cards: document.querySelector('.cards'),
+  modalEl: document.querySelector('.modal'),
+  modalCloseBtn: document.querySelector('.modal__close-btn'),
 };
 
 export const api = new ApiService();
 
 refs.searchForm.addEventListener('submit', onSubmit);
 refs.cards.addEventListener('click', onCardClick);
+refs.modalCloseBtn.addEventListener('click', closeModalEl);
 
 api.fetchDefault().then(data => {
   renderCard(data);
@@ -27,7 +30,15 @@ function onCardClick(event) {
     if (!data) {
       return;
     } else {
-      showModal(data.data);
+      openModalEl();
     }
   });
+}
+
+function openModalEl() {
+  refs.modalEl.showModal();
+}
+
+function closeModalEl() {
+  refs.modalEl.close();
 }
