@@ -1,11 +1,107 @@
 .modal {
-  padding: 0.5 rem;
-  background: white;
-  border-radius: 0.25 rem;
+  @extend .container;
+  padding: 48px 20px 40px 20px;
+  background: $defaultColor;
+  border: none;
   z-index: 2;
   position: relative;
 
-  &__colse-btn {
+  &__close-btn {
+    min-height: 30px;
+    min-width: 30px;
     position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    fill: $titleColor;
+    cursor: pointer;
+    transform: fill;
+    transition-property: $duration;
+    transition-timing-function: $timingFunction;
+
+    &:hover,
+    &:focus {
+      fill: $descritiopnColor;
+    }
+  }
+
+  .movie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__container {
+      width: 240px;
+    }
+
+    &__poster {
+      margin-bottom: 20px;
+      @include tablet {
+        margin-bottom: 0px;
+      }
+      @include desktop {
+        margin-bottom: 0px;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: $mediumFontSize;
+      line-height: $largeLineHeight;
+      color: $titleColor;
+      text-transform: uppercase;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: $smallFontSize;
+      line-height: $defaultLineHeight;
+
+      &__list {
+        color: $titleColor;
+
+        &--name {
+          color: $propertyColor;
+        }
+      }
+
+      &__item {
+        margin-bottom: 8px;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+
+        &--vote {
+          width: 36px;
+          height: 16px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          color: $defaultColor;
+          background: $descritiopnColor;
+          margin-bottom: 0px;
+        }
+
+        &--uppercase {
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 }

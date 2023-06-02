@@ -89,7 +89,7 @@ export function getMarkupImgPoster(poster_path, name, title) {
     ? `https://image.tmdb.org/t/p/w780${poster_path}`
     : `https://www.csaff.org/wp-content/uploads/csaff-no-poster.jpg`;
 
-  return `<img class="cards__poster" src=" ${getPosterPath(
+  return `<img class="cards__poster cars__poster--modal" src=" ${getPosterPath(
     poster_path
   )}" srcset="${posterUrl} 1x, ${posterUrlRetina} 2x" alt="${
     name || title

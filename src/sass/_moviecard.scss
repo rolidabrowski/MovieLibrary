@@ -93,3 +93,19 @@
     }
   }
 }
+
+.cars__poster--modal {
+  min-width: 240px;
+  height: 357px;
+  border-radius: 5px;
+  object-fit: cover;
+  vertical-align: middle;
+  @include tablet {
+    min-width: 264px;
+    height: 374px;
+  }
+  @include desktop {
+    min-width: 375px;
+    height: 478px;
+  }
+}
