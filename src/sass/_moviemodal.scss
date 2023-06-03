@@ -1,10 +1,29 @@
 .modal {
   @extend .container;
   padding: 48px 20px 40px 20px;
+  max-width: 280px;
+  display: flex;
+  justify-content: center;
   background: $defaultColor;
   border: none;
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   position: relative;
+  @include tablet {
+    max-width: 704px;
+    padding: 40px;
+  }
+  @include desktop {
+    max-width: 806px;
+    padding: 40px 12px;
+  }
+
+  ::backdrop {
+    background-color: $backdrop;
+  }
 
   &__close-btn {
     min-height: 30px;
@@ -32,11 +51,20 @@
   }
 
   .movie {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     &__container {
-      width: 240px;
+      display: flex;
+      flex-direction: column;
+      max-width: 240px;
+
+      @include tablet {
+        max-width: 624px;
+        flex-direction: row;
+        gap: 68px;
+      }
+      @include desktop {
+        max-width: 780px;
+        gap: 16px;
+      }
     }
 
     &__poster {
@@ -49,18 +77,22 @@
       }
     }
 
-    &__info {
+    &__description {
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
 
     &__title {
       margin-bottom: 20px;
+      font-weight: 500;
       font-size: $mediumFontSize;
       line-height: $largeLineHeight;
       color: $titleColor;
       text-transform: uppercase;
+      @include desktop {
+        font-size: 30px;
+        line-height: 35px;
+      }
     }
 
     .info {
@@ -71,6 +103,10 @@
       font-weight: 500;
       font-size: $smallFontSize;
       line-height: $defaultLineHeight;
+      @include tablet {
+        justify-content: flex-start;
+        gap: 40px;
+      }
 
       &__list {
         color: $titleColor;
@@ -102,6 +138,21 @@
           text-transform: uppercase;
         }
       }
+    }
+
+    &__about {
+      font-weight: 500;
+      font-size: $smallFontSize;
+      line-height: $defaultLineHeight;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    &__text {
+      font-weight: 500;
+      font-size: $smallFontSize;
+      line-height: $mediumFontSize;
+      margin-bottom: 20px;
     }
   }
 }

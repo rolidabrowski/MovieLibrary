@@ -126,37 +126,6 @@
       text-align: left;
     }
   }
-
-  .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-    &__status {
-      width: 130px;
-      height: 40px;
-      background-color: $transparentColor;
-      border: 1px solid $defaultColor;
-      border-radius: 4px;
-      color: $defaultColor;
-      font-weight: 500;
-      font-size: $smallFontSize;
-      line-height: $smallLineHeight;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      @include tablet {
-        width: 152px;
-        height: 44px;
-      }
-
-      &:hover,
-      &:focus {
-        background-color: $descritiopnColor;
-      }
-    }
-  }
 }
 
 @media (max-width: 768px) {

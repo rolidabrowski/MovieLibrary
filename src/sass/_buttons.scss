@@ -1,0 +1,55 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  &__status {
+    width: 130px;
+    height: 40px;
+    background-color: $transparentColor;
+    border: 1px solid $defaultColor;
+    border-radius: 4px;
+    color: $defaultColor;
+    font-weight: 500;
+    font-size: $smallFontSize;
+    line-height: $defaultLineHeight;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    @include tablet {
+      width: 152px;
+      height: 44px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $descritiopnColor;
+    }
+
+    &--add {
+      width: 110px;
+      height: 44px;
+      margin-bottom: 40px;
+      border: 1px solid $titleColor;
+      color: $titleColor;
+      padding: 1px 6px;
+      @include tablet {
+        width: 125px;
+        margin-bottom: 0px;
+      }
+      @include desktop {
+        width: 136px;
+        margin-bottom: 0px;
+      }
+
+      &:hover,
+      &:focus {
+        color: $defaultColor;
+        border-color: $descritiopnColor;
+        background-color: $descritiopnColor;
+      }
+    }
+  }
+}

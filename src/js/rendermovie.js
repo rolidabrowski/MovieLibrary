@@ -7,7 +7,7 @@ export function renderMovieInfo(data) {
       <div class="movie__poster">
         ${getMarkupImgPoster(data.poster_path, data.title)}
       </div>
-      <div class="movie__info">
+      <div class="movie__description">
         <h2 class="movie__title">${data.title}</h2>
         <div class="info">
           <ul class="info__list info__list--name">
@@ -36,10 +36,10 @@ export function renderMovieInfo(data) {
         <p class="movie__text">${data.overview}</p>
         <ul class = "button">
           <li class = "button__item">
-            <button class="button__add-watched" type = "button">add to Watched</button>
+            <button class="button__status button__status--add" type = "button">add to watched</button>
           </li>
           <li class = "buttons__item">
-            <button class="button__add-queue" type = "button">add to queue</button>
+            <button class="button__status button__status--add" type = "button">add to queue</button>
           </li>
         </ul>
       </div>
