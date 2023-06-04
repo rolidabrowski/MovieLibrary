@@ -36,10 +36,10 @@ export function renderMovieInfo(data) {
         <p class="movie__text">${data.overview}</p>
         <ul class = "button">
           <li class = "button__item">
-            <button class="button__status button__status--add" type = "button">add to watched</button>
+            <button class="button__status button__status--add add-watched" type = "button">add to watched</button>
           </li>
           <li class = "buttons__item">
-            <button class="button__status button__status--add" type = "button">add to queue</button>
+            <button class="button__status button__status--add add-queue" type = "button">add to queue</button>
           </li>
         </ul>
       </div>

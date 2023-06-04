@@ -2,6 +2,7 @@ import ApiService from './js/api.js';
 import { onSubmit } from './js/submit.js';
 import { renderCard } from './js/rendercard.js';
 import { renderMovieInfo } from './js/rendermovie.js';
+import { dataService } from './js/localstorage.js';
 
 export const refs = {
   searchForm: document.querySelector('.form'),
@@ -10,8 +11,6 @@ export const refs = {
   modalEl: document.querySelector('.modal'),
   modalCloseBtn: document.querySelector('.modal__close-btn'),
   movieEl: document.querySelector('.movie'),
-  addwatchedBtn: document.querySelector('.button__add-watched'),
-  addqueueBtn: document.querySelector('.button__add-queue'),
 };
 
 export const api = new ApiService();
@@ -40,6 +39,7 @@ function onCardClick(event) {
 function openModalEl(data) {
   refs.modalEl.showModal();
   renderMovieInfo(data);
+  dataService(data);
 }
 
 function closeModalEl() {
