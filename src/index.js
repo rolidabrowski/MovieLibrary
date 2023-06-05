@@ -1,23 +1,21 @@
 import ApiService from './js/api.js';
 import { onSubmit } from './js/submit.js';
 import { renderCard } from './js/rendercard.js';
-import { renderMovieInfo } from './js/rendermovie.js';
-import { dataService } from './js/localstorage.js';
+import { showModal } from './js/modalmovie.js';
 
 export const refs = {
   searchForm: document.querySelector('.form'),
   inputEL: document.querySelector('.form__input'),
   cards: document.querySelector('.cards'),
   modalEl: document.querySelector('.modal'),
-  modalCloseBtn: document.querySelector('.modal__close-btn'),
-  movieEl: document.querySelector('.movie'),
+  modalCloseBtn: document.querySelector('.movie__close-btn'),
+  movieEl: document.querySelector('.movie__container'),
 };
 
 export const api = new ApiService();
 
 refs.searchForm.addEventListener('submit', onSubmit);
 refs.cards.addEventListener('click', onCardClick);
-refs.modalCloseBtn.addEventListener('click', closeModalEl);
 
 api.fetchDefault().then(data => {
   renderCard(data);
@@ -31,17 +29,7 @@ function onCardClick(event) {
     if (!data) {
       return;
     } else {
-      openModalEl(data.data);
+      showModal(data.data);
     }
   });
-}
-
-function openModalEl(data) {
-  refs.modalEl.showModal();
-  renderMovieInfo(data);
-  dataService(data);
-}
-
-function closeModalEl() {
-  refs.modalEl.close();
 }

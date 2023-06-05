@@ -3,7 +3,6 @@ import { getMarkupImgPoster } from './rendercard.js';
 
 export function renderMovieInfo(data) {
   refs.movieEl.innerHTML = `
-    <div class="movie__container">
       <div class="movie__poster">
         ${getMarkupImgPoster(data.poster_path, data.title)}
       </div>
@@ -42,6 +41,5 @@ export function renderMovieInfo(data) {
             <button class="button__status button__status--add add-queue" type = "button">add to queue</button>
           </li>
         </ul>
-      </div>
-    </div>`;
+      </div>`;
 }
