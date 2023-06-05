@@ -22,6 +22,7 @@ api.fetchDefault().then(data => {
 });
 
 function onCardClick(event) {
+  event.preventDefault();
   if (event.target === event.currentTarget) return;
 
   api.movieId = event.target.closest('li').id;

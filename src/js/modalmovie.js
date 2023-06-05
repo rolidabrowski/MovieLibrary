@@ -9,7 +9,7 @@ export function showModal(data) {
   refs.modalCloseBtn.addEventListener('click', closeModal);
 }
 
-function closeModal(e) {
-  e.preventDefault();
+function closeModal(event) {
+  event.preventDefault();
   refs.modalEl.close();
 }
